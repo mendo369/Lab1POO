@@ -6,6 +6,8 @@
 #include "Item.h"
 
 int main() {
+
+#pragma region items
     Item rabadon;
     rabadon.name = "Rabadon";
     rabadon.value = 3200;
@@ -57,6 +59,10 @@ int main() {
     cinderhulk.ad = 40;
     cinderhulk.ap = 40;
 
+#pragma endregion
+
+
+#pragma region Champions
     Champion ahri;
     ahri.nombre = "Ahri";
     ahri.tipo = "Mago";
@@ -80,6 +86,8 @@ int main() {
     jinx.ap = 0;
     jinx.health = 550;
     jinx.habilities.push_back("Pow Pow");
+
+#pragma endregion
 
     ahri.atacar();
     ahri.usarHabilidad("Orb of Deception");

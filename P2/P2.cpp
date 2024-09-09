@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include "Vehiculo.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Vehiculo v1;
+	v1.anio = 2001;
+	v1.modelo = "Corola";
+	v1.marca = "Toyota";
+	v1.cilindraje = 3100;
+
+	v1.mostrar_informacion();
+
+
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
