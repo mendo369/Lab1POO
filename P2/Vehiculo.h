@@ -7,8 +7,9 @@ class Vehiculo
 		std::string modelo;
 		int anio;
 		int cilindraje;
+		std::string combustible;
 
 		void acelerar();
-		void mostrar_informacion();
+		virtual void mostrar_informacion();
 };
 

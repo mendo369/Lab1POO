@@ -3,18 +3,24 @@
 
 #include <iostream>
 #include "Vehiculo.h"
+#include "Auto.h"
 
 int main()
 {
-	Vehiculo v1;
-	v1.anio = 2001;
-	v1.modelo = "Corola";
-	v1.marca = "Toyota";
-	v1.cilindraje = 3100;
+    Auto miAuto;
+    miAuto.marca = "Toyota";
+    miAuto.modelo = "Corolla";
+    miAuto.anio = 2022;
+    miAuto.cilindraje = 1800;
+    miAuto.numero_puertas = 4;
+    miAuto.numero_llantas = 4;
+    miAuto.techo_plegable = false;
+    miAuto.llanta_repuesto = true;
+    miAuto.cajuela = true;
 
-	v1.mostrar_informacion();
-
-
+    miAuto.acelerar(); // Llamará a la función acelerar de Auto
+    miAuto.mostrar_informacion(); // Mostrar información del auto
+    miAuto.bajar_ventanas();
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
