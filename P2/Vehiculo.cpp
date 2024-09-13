@@ -10,7 +10,11 @@ void Vehiculo::apagar() {
 };
 
 void Vehiculo::acelerar() {
-	std::cout << "acelerando"<<std::endl;
+	std::cout << "Acelerando"<<std::endl;
+}
+
+void Vehiculo::frenar() {
+    std::cout << "Frenando" << std::endl;
 }
 
 void Vehiculo::mostrar_informacion() {
