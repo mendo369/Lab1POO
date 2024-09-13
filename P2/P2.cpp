@@ -4,6 +4,8 @@
 #include <iostream>
 #include "Vehiculo.h"
 #include "Auto.h"
+#include "Camion.h"
+#include "Motocicleta.h"
 
 int main()
 {
@@ -14,21 +16,31 @@ int main()
     miAuto.cilindraje = 1800;
     miAuto.numero_puertas = 4;
     miAuto.numero_llantas = 4;
-    miAuto.techo_plegable = false;
+    miAuto.techo_plegable = true;
     miAuto.llanta_repuesto = true;
     miAuto.cajuela = true;
 
-    miAuto.acelerar(); // Llamará a la función acelerar de Auto
-    miAuto.mostrar_informacion(); // Mostrar información del auto
-    miAuto.bajar_ventanas();
+    /*miAuto.acelerar(); 
+    miAuto.mostrar_informacion();
+    miAuto.bajar_ventanas();*/
+    //miAuto.plegar_techo();
+
+    Camion miCamion;
+    miCamion.marca = "Mercedes";
+    miCamion.modelo = "Mod1";
+    miCamion.anio = 2012;
+    miCamion.capacidad_carga = 40;
+    miCamion.cilindraje = 4000;
+    miCamion.combustible = "ACPM";
+    miCamion.numero_llantas = 6;
+    miCamion.tipo_carga = "Basura";
+
+    miCamion.encender();
+    miCamion.acelerar();
+    miCamion.cargar(4);
+    miCamion.descargar(1);
+    miCamion.mostrar_informacion();
+    miCamion.apagar();
+
+    return 0;
 }
-
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln

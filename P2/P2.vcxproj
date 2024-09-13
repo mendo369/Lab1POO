@@ -129,15 +129,21 @@
   <ItemGroup>
     <ClCompile Include="Auto.cpp" />
     <ClCompile Include="Camion.cpp" />
+    <ClCompile Include="Camioneta.cpp" />
     <ClCompile Include="Motocicleta.cpp" />
+    <ClCompile Include="MotoDeportiva.cpp" />
     <ClCompile Include="P2.cpp" />
     <ClCompile Include="Vehiculo.cpp" />
+    <ClCompile Include="Volqueta.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auto.h" />
     <ClInclude Include="Camion.h" />
+    <ClInclude Include="Camioneta.h" />
     <ClInclude Include="Motocicleta.h" />
+    <ClInclude Include="MotoDeportiva.h" />
     <ClInclude Include="Vehiculo.h" />
+    <ClInclude Include="Volqueta.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

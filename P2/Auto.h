@@ -13,5 +13,9 @@ class Auto : public Vehiculo
 		void subir_ventanas();
 		void mostrar_informacion() override;
 		void bajar_ventanas();
+		void abrir_cajuela();
+		void cerrar_cajuela();
+		void plegar_techo();
+		void desplegar_techo();
 };
 

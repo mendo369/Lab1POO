@@ -9,7 +9,10 @@ class Vehiculo
 		int cilindraje;
 		std::string combustible;
 
+		void encender();
+		void apagar();
 		void acelerar();
+		void frenar();
 		virtual void mostrar_informacion();
 };
 
