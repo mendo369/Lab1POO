@@ -90,7 +90,7 @@ int main() {
 #pragma endregion
 
     ahri.atacar();
-    ahri.usarHabilidad("Orb of Deception");
+    ahri.usar_habilidad("Orb of Deception");
 
     
 

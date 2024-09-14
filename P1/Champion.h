@@ -15,6 +15,10 @@ public:
 
     // Métodos (funciones)
     void atacar();
-    void usarHabilidad(std::string habilidad);
+    void usar_habilidad(std::string habilidad);
+    void comprar_objeto();
+    void vender_objeto();
+    void morir();
+    void recibir_danio();
 };
 

@@ -128,20 +128,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Auto.cpp" />
+    <ClCompile Include="AutoDeportivo.cpp" />
     <ClCompile Include="Camion.cpp" />
     <ClCompile Include="Camioneta.cpp" />
+    <ClCompile Include="CasaRodante.cpp" />
     <ClCompile Include="Motocicleta.cpp" />
     <ClCompile Include="MotoDeportiva.cpp" />
+    <ClCompile Include="MotoEnduro.cpp" />
     <ClCompile Include="P2.cpp" />
     <ClCompile Include="Vehiculo.cpp" />
     <ClCompile Include="Volqueta.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auto.h" />
+    <ClInclude Include="AutoDeportivo.h" />
     <ClInclude Include="Camion.h" />
     <ClInclude Include="Camioneta.h" />
+    <ClInclude Include="CasaRodante.h" />
     <ClInclude Include="Motocicleta.h" />
     <ClInclude Include="MotoDeportiva.h" />
+    <ClInclude Include="MotoEnduro.h" />
     <ClInclude Include="Vehiculo.h" />
     <ClInclude Include="Volqueta.h" />
   </ItemGroup>
