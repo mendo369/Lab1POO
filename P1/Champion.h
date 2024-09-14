@@ -12,13 +12,13 @@ public:
     int mana;
     int ap;
     int ad;
-    float oro;
+    double oro;
     std::vector<std::string> habilities;
     std::vector<Item> items;
 
 
     // Métodos (funciones)
-    void atacar();
+    void atacar(Champion& campeon);
     void usar_habilidad(std::string habilidad);
     void comprar_objeto(Item& objeto);
     void vender_objeto(Item& objeto);

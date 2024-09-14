@@ -3,8 +3,10 @@
 #include <iostream>
 
 
-void Champion::atacar() {
-    std::cout << nombre << " ataca!" << std::endl;
+void Champion::atacar(Champion& campeon) {
+    std::cout << nombre << " ataca a "<<campeon.nombre << std::endl;
+    int danio = ad+ap;
+    campeon.recibir_danio(danio);
 }
 
 void Champion::usar_habilidad(std::string habilidad) {
@@ -14,15 +16,21 @@ void Champion::usar_habilidad(std::string habilidad) {
 void Champion::comprar_objeto(Item& objeto) {
     items.push_back(objeto);
     oro -= objeto.value;
-    std::cout << objeto.name <<" comprado. Oro restante: "<< oro << std::endl;
-
+    ad += objeto.ad;
+    ap += objeto.ap;
+    health += objeto.health;
+    mana += objeto.health;
+    std::cout<<nombre<<" compró " << objeto.name << ". Oro restante: " << oro << std::endl;
 };
 
 void Champion::vender_objeto(Item& objeto) {
     items.erase(std::remove(items.begin(), items.end(), objeto), items.end());
-    oro += oro * (1, 80);
-    std::cout << objeto.name << " vendido. Oro restante: " << oro << std::endl;
-
+    oro = oro * (1.80);
+    ad -= objeto.ad;
+    ap -= objeto.ap;
+    health -= objeto.health;
+    mana -= objeto.health;
+    std::cout << nombre << " vendió " << objeto.name << ". Oro restante: " << oro << std::endl;
 };
 
 void Champion::morir() {
@@ -31,5 +39,12 @@ void Champion::morir() {
 };
 
 void Champion::recibir_danio(int danio) {
-    std::cout << nombre << " recibio " << danio << "de daño" << std::endl;
+    health -= danio;
+
+    if (health <= 0) {
+        Champion::morir();
+        return;
+    }
+
+    std::cout << nombre << " recibio " << danio << " de daño. Vida restante: " << health<< std::endl;
 };

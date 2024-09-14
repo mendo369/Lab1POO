@@ -70,7 +70,7 @@ int main() {
     ahri.ap = 80;
     ahri.health = 800;
     ahri.habilities.push_back("Orb of Deception");
-    ahri.oro = 3000,0;
+    ahri.oro = 5400,0;
 
     Champion ornn;
     ornn.nombre = "Ornn";
@@ -90,10 +90,17 @@ int main() {
 
 #pragma endregion
 
-    ahri.atacar();
+    ahri.atacar(jinx);
     ahri.comprar_objeto(ludens);
+    ahri.vender_objeto(ludens);
     ahri.usar_habilidad("Orb of Deception");
 
+    jinx.comprar_objeto(infinityEdge);
+    jinx.atacar(ahri);
+    jinx.atacar(ahri);
+    jinx.atacar(ahri);
+    jinx.atacar(ahri);
+    jinx.atacar(ahri);
     
 
     return 0;
