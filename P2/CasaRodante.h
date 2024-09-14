@@ -6,7 +6,7 @@ public:
     int capacidadAguaPotable;
     int capacidadTanqueNegro;
     bool cocinaEquipada;
-    bool bañoCompleto;
+    bool banoCompleto;
 
     // Métodos específicos de casas rodantes
     void extenderToldo();

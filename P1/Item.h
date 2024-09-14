@@ -8,6 +8,15 @@ class Item
 		int mana;
 		int health;
 		int ad;
-		int ap;
+		int ap; 
+
+		bool operator==(const Item& other) const {
+			return value == other.value &&
+				name == other.name &&
+				mana == other.mana &&
+				health == other.health &&
+				ad == other.ad &&
+				ap == other.ap;
+		}
 };
 

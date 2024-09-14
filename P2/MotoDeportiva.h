@@ -13,5 +13,6 @@ class MotoDeportiva : public Motocicleta
 		void activar_velocidad_crucero();
 		void desactivar_velocidad_crucero();
 		void frenar(bool ayuda);
+		void mostrar_informacion() override;
 };
 

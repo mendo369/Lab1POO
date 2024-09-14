@@ -18,8 +18,9 @@ void Vehiculo::frenar() {
 }
 
 void Vehiculo::mostrar_informacion() {
-    std::cout << "Modelo: " << modelo
+    std::cout 
+        << "Marca: " << marca
+        << " | Modelo: " << modelo
         << " | Año: " << anio
-        << " | Marca: " << marca
         << " | Cilindraje: " << cilindraje << std::endl;
 }
