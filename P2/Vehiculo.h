@@ -12,7 +12,7 @@ class Vehiculo
 		void encender();
 		void apagar();
 		void acelerar();
-		virtual void frenar();
+		void frenar();
 		virtual void mostrar_informacion();
 };
 

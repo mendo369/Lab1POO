@@ -79,6 +79,7 @@ int main() {
     ornn.ap = 0;
     ornn.health = 1200;
     ornn.habilities.push_back("Volcanic Rupture");
+    ornn.oro = 5400, 0;
 
     Champion jinx;
     jinx.nombre = "Jinx";
@@ -87,6 +88,8 @@ int main() {
     jinx.ap = 0;
     jinx.health = 550;
     jinx.habilities.push_back("Pow Pow");
+    jinx.oro = 5400, 0;
+
 
 #pragma endregion
 
@@ -96,10 +99,7 @@ int main() {
     ahri.usar_habilidad("Orb of Deception");
 
     jinx.comprar_objeto(infinityEdge);
-    jinx.atacar(ahri);
-    jinx.atacar(ahri);
-    jinx.atacar(ahri);
-    jinx.atacar(ahri);
+    jinx.usar_habilidad("Chispitas");
     jinx.atacar(ahri);
     
 

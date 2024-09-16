@@ -1,5 +1,6 @@
-// P2.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+// integrantes
+// Luis David Mendoza Manzano 2067621
+// Jose David Gonzalez Alvarez 2266333
 
 #include <iostream>
 #include "Vehiculo.h"
@@ -29,6 +30,14 @@ void mostrarMenu() {
     std::cout << "9. Moto Enduro" << std::endl;
 }
 
+void mostrarMetodos() {
+    std::cout << "Seleccione el metodo que desea usar" << std::endl;
+    std::cout << "1. Encender" << std::endl;
+    std::cout << "2. Acelerar" << std::endl;
+    std::cout << "3. Frenar" << std::endl;
+    std::cout << "4. Apagar" << std::endl;
+}
+
 template <typename T>
 T obtenerEntradaNumerica(const std::string& mensaje) {
     T valor;
@@ -49,7 +58,40 @@ T obtenerEntradaNumerica(const std::string& mensaje) {
     return valor;
 }
 
-// Función para crear un Auto
+void usarMetodos(Vehiculo& vehiculo) {
+    int opcion;
+    bool continuar = true;
+
+    while (continuar){
+        mostrarMetodos();
+        std::cout << "Ingrese una opción (0 para salir):" << std::endl;
+        std::cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            vehiculo.encender();
+            break;
+        case 2:
+            vehiculo.acelerar();
+            break;
+        case 3:
+            vehiculo.frenar();
+            break;
+        case 4:
+            vehiculo.apagar();
+            break;
+        case 0:
+            continuar = false;
+            break;
+        default:
+            std::cout << "Opción no válida. Intente nuevamente." << std::endl;
+        }
+
+        std::cout << std::endl;
+    }
+}
+
 void crearAuto() {
     Auto miAuto;
     std::cout << "Marca del Auto: ";
@@ -60,16 +102,15 @@ void crearAuto() {
     miAuto.cilindraje = obtenerEntradaNumerica<int>("Cilindraje: ");
     miAuto.numero_puertas = obtenerEntradaNumerica<int>("Número de puertas: ");
     miAuto.numero_llantas = obtenerEntradaNumerica<int>("Número de llantas: ");
-    miAuto.cajuela = obtenerEntradaNumerica<bool>("Tiene cajuela? (1: sí, 0: no): ");
-    miAuto.llanta_repuesto = obtenerEntradaNumerica<bool>("Tiene llanta de repuesto? (1: sí, 0: no): ");
-    miAuto.techo_plegable = obtenerEntradaNumerica<bool>("Techo plegable? (1: sí, 0: no): ");
+    miAuto.cajuela = obtenerEntradaNumerica<bool>("Tiene cajuela? (1: si, 0: no): ");
+    miAuto.llanta_repuesto = obtenerEntradaNumerica<bool>("Tiene llanta de repuesto? (1: si, 0: no): ");
+    miAuto.techo_plegable = obtenerEntradaNumerica<bool>("Techo plegable? (1: si, 0: no): ");
     std::cout << "Se creó el auto:" << std::endl;
     std::cout << std::endl;
     miAuto.mostrar_informacion();
+    usarMetodos(miAuto);
 }
 
-
-// Función para crear una Camioneta
 void crearCamioneta() {
     Camioneta miCamioneta;
     std::cout << "Marca de la Camioneta: ";
@@ -85,9 +126,27 @@ void crearCamioneta() {
     std::cout << "Se creó la camioneta: " << std::endl;
     std::cout << std::endl;
     miCamioneta.mostrar_informacion();
+    usarMetodos(miCamioneta);
 }
 
-// Función para crear un Camión
+void crearAutoDeportivo() {
+    AutoDeportivo miAuto;
+    std::cout << "Marca de el auto deportivo: ";
+    std::cin >> miAuto.marca;
+    std::cout << "Modelo de el auto deportivo ";
+    std::cin >> miAuto.modelo;
+    miAuto.anio = obtenerEntradaNumerica<int>("Año de el auto deportivo: ");
+    miAuto.cilindraje = obtenerEntradaNumerica<int>("Cilindraje: ");
+    miAuto.numero_puertas = obtenerEntradaNumerica<int>("Número de puertas: ");
+    miAuto.numero_llantas = obtenerEntradaNumerica<int>("Número de llantas: ");
+    miAuto.potencia = obtenerEntradaNumerica<int>("Potencia: ");
+    miAuto.turbo = obtenerEntradaNumerica<bool>("Tiene turbo? (1: sí, 0: no): ");
+    std::cout << "Se creó el auto:" << std::endl;
+    std::cout << std::endl;
+    miAuto.mostrar_informacion();
+    usarMetodos(miAuto);
+}
+
 void crearCamion() {
     Camion miCamion;
     std::cout << "Marca del Camión: ";
@@ -102,6 +161,7 @@ void crearCamion() {
     std::cout << "Se creó el camion: " << std::endl;
     std::cout << std::endl;
     miCamion.mostrar_informacion();
+    usarMetodos(miCamion);
 }
 
 void crearVolqueta() {
@@ -118,6 +178,27 @@ void crearVolqueta() {
     std::cout << "Se creó la volqueta: " << std::endl;
     std::cout << std::endl;
     miVolqueta.mostrar_informacion();
+    usarMetodos(miVolqueta);
+}
+
+void crearCasaRodante() {
+    CasaRodante miCamion;
+    std::cout << "Marca de la casa rodante: ";
+    std::cin >> miCamion.marca;
+    std::cout << "Modelo de la casaa rodante: ";
+    std::cin >> miCamion.modelo;
+    miCamion.anio = obtenerEntradaNumerica<int>("Año de la casa rodante: ");
+    miCamion.cilindraje = obtenerEntradaNumerica<int>("Cilindraje: ");
+    miCamion.capacidad_carga = obtenerEntradaNumerica<int>("Capacidad de carga (en toneladas): ");
+    miCamion.tipo_carga = obtenerEntradaNumerica<std::string>("Tipo de carga: ");
+    miCamion.numero_llantas = obtenerEntradaNumerica<int>("Número de llantas: ");
+    miCamion.cantidadCamas = obtenerEntradaNumerica<int>("Numero de camas: ");
+    miCamion.capacidadAguaPotable = obtenerEntradaNumerica<int>("Capacidad agua potable (en litros): ");
+    miCamion.cocinaEquipada = obtenerEntradaNumerica<bool>("Tiene cocina equipada? (1: sí, 0: no): ");
+    std::cout << "Se creó la casa rodante: " << std::endl;
+    std::cout << std::endl;
+    miCamion.mostrar_informacion();
+    usarMetodos(miCamion);
 }
 
 void crearMotocicleta() {
@@ -137,6 +218,7 @@ void crearMotocicleta() {
     std::cout << "Se creó la motocicleta: " << std::endl;
     std::cout << std::endl;
     miMotocicleta.mostrar_informacion();
+    usarMetodos(miMotocicleta);
 }
 
 void crearMotocicletaDeportiva() {
@@ -159,6 +241,31 @@ void crearMotocicletaDeportiva() {
     std::cout << "Se creó la motocicleta: " << std::endl;
     std::cout << std::endl;
     miMotocicleta.mostrar_informacion();
+    usarMetodos(miMotocicleta);
+}
+
+void crearMotocicletaEnduro() {
+    MotoEnduro miMotocicleta;
+    std::cout << "Marca de la moto: ";
+    std::cin >> miMotocicleta.marca;
+    std::cout << "Modelo de la moto: ";
+    std::cin >> miMotocicleta.modelo;
+    miMotocicleta.anio = obtenerEntradaNumerica<int>("Año de la moto: ");
+    miMotocicleta.cilindraje = obtenerEntradaNumerica<int>("Cilindraje: ");
+    std::cout << "Caja de cambios: ";
+    std::cin >> miMotocicleta.caja_cambios;
+    std::cout << "Freno delantero: ";
+    std::cin >> miMotocicleta.freno_delantero;
+    std::cout << "Freno trasero: ";
+    std::cin >> miMotocicleta.freno_trasero;
+    miMotocicleta.suspensionDelantera = obtenerEntradaNumerica<int>("Milimetros de la suspensión delantera: ");
+    miMotocicleta.suspensionTrasera = obtenerEntradaNumerica<int>("Milimetros de la suspensión trasera: ");
+    miMotocicleta.llantasTacticas = obtenerEntradaNumerica<bool>("Techo llantas tacticas? (1: si, 0: no): ");
+    miMotocicleta.arranqueElectrico = obtenerEntradaNumerica<bool>("Techo arranque electrico? (1: si, 0: no): ");
+    std::cout << "Se creó la motocicleta: " << std::endl;
+    std::cout << std::endl;
+    miMotocicleta.mostrar_informacion();
+    usarMetodos(miMotocicleta);
 }
 
 int main() {
@@ -175,7 +282,7 @@ int main() {
             crearAuto();
             break;
         case 2:
-            std::cout << "Función para crear Auto Deportivo aún no implementada." << std::endl;
+            crearAutoDeportivo();
             break;
         case 3:
             crearCamioneta();
@@ -184,7 +291,7 @@ int main() {
             crearCamion();
             break;
         case 5:
-            std::cout << "Función para crear Casa Rodante aún no implementada." << std::endl;
+            crearCasaRodante();
             break;
         case 6:
             crearVolqueta();
@@ -196,7 +303,7 @@ int main() {
             crearMotocicletaDeportiva();
             break;
         case 9:
-            std::cout << "Función para crear Moto Enduro aún no implementada." << std::endl;
+            crearMotocicletaEnduro();
             break;
         case 0:
             continuar = false;

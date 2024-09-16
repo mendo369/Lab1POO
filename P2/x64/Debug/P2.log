@@ -1,4 +1,9 @@
-﻿  P2.cpp
-  Vehiculo.cpp
+﻿  AutoDeportivo.cpp
+C:\Proyects\c++\Laboratorio1\P2\AutoDeportivo.cpp(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  CasaRodante.cpp
+C:\Proyects\c++\Laboratorio1\P2\CasaRodante.cpp(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  MotoEnduro.cpp
+C:\Proyects\c++\Laboratorio1\P2\MotoEnduro.cpp(2,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  P2.cpp
   Generando código...
   P2.vcxproj -> C:\Proyects\c++\Laboratorio1\x64\Debug\P2.exe

@@ -14,13 +14,17 @@ void Champion::usar_habilidad(std::string habilidad) {
 }
 
 void Champion::comprar_objeto(Item& objeto) {
+    if (oro < objeto.value) {
+        std::cout << "Oro insuficiente" << std::endl;
+        return;
+    }
     items.push_back(objeto);
     oro -= objeto.value;
     ad += objeto.ad;
     ap += objeto.ap;
     health += objeto.health;
     mana += objeto.health;
-    std::cout<<nombre<<" compró " << objeto.name << ". Oro restante: " << oro << std::endl;
+    std::cout<<nombre<<" compro " << objeto.name << ". Oro restante: " << oro << std::endl;
 };
 
 void Champion::vender_objeto(Item& objeto) {
@@ -30,7 +34,7 @@ void Champion::vender_objeto(Item& objeto) {
     ap -= objeto.ap;
     health -= objeto.health;
     mana -= objeto.health;
-    std::cout << nombre << " vendió " << objeto.name << ". Oro restante: " << oro << std::endl;
+    std::cout << nombre << " vendio " << objeto.name << ". Oro restante: " << oro << std::endl;
 };
 
 void Champion::morir() {
